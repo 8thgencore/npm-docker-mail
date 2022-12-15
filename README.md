@@ -27,3 +27,11 @@ Create Recorder from DNS:
   1. mail ->  A -> IN -> IP_Server
   2. @ or blank -> MX -> mail.example.com -> Priority: 10
   3. @ or blank -> TXT -> v=spf1 mx ~all or v=spf1 mx -all
+
+
+
+Check MX from your server:
+
+https://toolbox.googleapps.com/apps/checkmx/
+
+https://intodns.com/
