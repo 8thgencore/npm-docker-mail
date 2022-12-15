@@ -35,13 +35,3 @@ Environment variables:
 Container capabilities:
   NET_ADMIN
   SYS_PTRACE  
-
-After starting the container, apply the following commands in the console:
-  1. setup config dkim 
-  2. setup email add admin@example.com password (run every time to add account)
-  
-
-Create Recorder from DNS:
-  1. 
-  2. 
-  3. 
