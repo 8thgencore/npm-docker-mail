@@ -1,0 +1,47 @@
+Image: docker.io/mailserver/docker-mailserver:edge
+Ports:
+  25:25
+  143:143
+  465:465
+  587:587
+  993:993
+
+Volume:
+  contrainer: /etc/letsencrypt   -> volume: (indicate the volume from npm where the certificates are included)   
+
+Network:
+  hostname: mail
+  Domain-Name: example.vom
+
+Environment variables:
+	ENABLE_FAIL2BAN=1
+	PERMIT_DOCKER=network
+	ONE_DIR=1
+	ENABLE_POSTGREY=0
+	ENABLE_CLAMAV=0
+	ENABLE_SPAMASSASSIN=0
+	SPOOF_PROTECTION=0
+	FETCHMAIL_POLL=300
+	POSTGREY_AUTO_WHITELIST_CLIENTS=5
+	POSTGREY_DELAY=300
+	POSTGREY_MAX_AGE=35
+	POSTGREY_TEXT=Delayed by Postgrey
+	SASLAUTHD_MECH_OPTIONS=
+  SSL_TYPE=manual
+	SSL_CERT_PATH=/etc/letsencrypt/live/npm-X/fullchain.pem   (X - is number Certificate)
+	SSL_KEY_PATH=/etc/letsencrypt/live/npm-X/privkey.pem      (X - is number Certificate)
+	TLS_LEVEL=modern
+
+Container capabilities:
+  NET_ADMIN
+  SYS_PTRACE  
+
+After starting the container, apply the following commands in the console:
+  1. setup config dkim 
+  2. setup email add admin@example.com password (run every time to add account)
+  
+
+Create Recorder from DNS:
+  1. 
+  2. 
+  3. 
