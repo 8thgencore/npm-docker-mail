@@ -17,13 +17,25 @@ services:
       - ./docker-data/dms/config/:/tmp/docker-mailserver/
       - /etc/localtime:/etc/localtime:ro
     environment:
-      - ENABLE_SPAMASSASSIN=1
-      - SPAMASSASSIN_SPAM_TO_INBOX=1
-      - ENABLE_CLAMAV=1
-      - ENABLE_FAIL2BAN=1
-      - ENABLE_POSTGREY=1
-      - ENABLE_SASLAUTHD=0
-      - ONE_DIR=1
+     - ENABLE_FAIL2BAN=1
+     - PERMIT_DOCKER=network
+     - ONE_DIR=1
+     - ENABLE_POSTGREY=0
+     - ENABLE_CLAMAV=0
+     - ENABLE_SPAMASSASSIN=1
+     - SPOOF_PROTECTION=0
+     - FETCHMAIL_POLL=300
+     - POSTGREY_AUTO_WHITELIST_CLIENTS=5
+     - POSTGREY_DELAY=300
+     - POSTGREY_MAX_AGE=35
+     - POSTGREY_TEXT=Delayed by Postgrey
+     - SASLAUTHD_MECH_OPTIONS=
+     - SSL_TYPE=manual
+     - SSL_CERT_PATH=/etc/letsencrypt/live/npm-X/fullchain.pem   (X - is number Certificate)
+     - SSL_KEY_PATH=/etc/letsencrypt/live/npm-X/privkey.pem  -   (X - is number Certificate)
+     - TLS_LEVEL=modern
+     - SPAMASSASSIN_SPAM_TO_INBOX=1
+
     cap_add:
       - NET_ADMIN
     restart: always
