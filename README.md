@@ -9,11 +9,11 @@ SSL Certificates it must be for "mail.example.com"
 
 
 
-IF can use docker-compose.yml don't forget:
+<b>IF can use docker-compose.yml don't forget:
 
 Volume:
   contrainer: /etc/letsencrypt   -> volume: (indicate the volume from npm where the certificates are included)   
-
+</b>
 
 
 
