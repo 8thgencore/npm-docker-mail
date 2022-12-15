@@ -6,6 +6,12 @@ Docker Mailserver: https://github.com/docker-mailserver/docker-mailserver
 
 You can use: docker-compose.yml or docker-portainer
 
+IF can use docker-compose.yml don't forget:
+
+Volume:
+  contrainer: /etc/letsencrypt   -> volume: (indicate the volume from npm where the certificates are included)   
+
+
 SSL Certificates it must be for "mail.example.com"
 
 After starting the container, apply the following commands in the console:
